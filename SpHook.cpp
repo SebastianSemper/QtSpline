@@ -6,6 +6,7 @@ SpHook::SpHook(QPointF pos, int typ){
 	position = pos;
 	this->setPos(pos-QPointF(2,2));
 	type = typ;
+	radius = 15;
 }
 
 SpHook::~SpHook(){
@@ -13,13 +14,12 @@ SpHook::~SpHook(){
 }
 
 QRectF SpHook::boundingRect() const{
-	return QRectF(0, 0, 20, 20);
+	return QRectF(0, 0, radius, radius);
 }
 void SpHook::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget){
 	painter->setRenderHint(QPainter::Antialiasing);
         painter->setBrush(Qt::blue);
-        painter->drawEllipse(-10, -10, 20, 20);
-        
+        painter->drawEllipse(-radius/2, -radius/2, radius, radius);     
         
 }
 

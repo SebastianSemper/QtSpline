@@ -27,6 +27,8 @@ class scene:public QGraphicsScene{
 		//scene();
 		//~scene();
 		void mousePressEvent(QGraphicsSceneMouseEvent *event);
+		void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
+		
 
 };
 #endif

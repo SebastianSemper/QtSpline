@@ -16,8 +16,10 @@ using namespace std;
 class SpNode:public QGraphicsItemGroup {
 	private:
 		QPointF position;
-		SpHook *lef;
-		SpHook *rig;
+		SpHook * lef;
+		SpHook * rig;
+		int radius;
+		QColor color;
 	public:
 		SpNode(QPointF, QPointF, QPointF);
 		~SpNode();
@@ -25,6 +27,11 @@ class SpNode:public QGraphicsItemGroup {
 		void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 		QPointF GetPosition();
 		void SetPosition(QPointF);
+		SpHook * getLef();
+		SpHook * getRig();
+		
+		void mouseHoverEvent(QGraphicsSceneMouseEvent * event);
+		void mouseLeaveEvent(QGraphicsSceneMouseEvent * event);
 };
 
 
