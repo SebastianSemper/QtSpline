@@ -4,7 +4,11 @@ using namespace std;
 
 
 SpBezier::SpBezier(SpNode &a,SpNode &b){
-	QPointF P1 = a.GetPosition(), P2 = b.GetPosition(), A1 = a.getRig()->GetPosition(), A2 = b.getRig()->GetPosition();
+	QPointF P1 = a.GetPosition(), P2 = b.GetPosition(), A1 = a.getLef()->GetPosition(), A2 = b.getRig()->GetPosition();
+	
+	A1.setX(A1.x()+P1.x()); A1.setY(A1.y()+P1.y());
+	A2.setX(A2.x()+P2.x()); A2.setY(A2.y()+P2.y());
+	
 	curve.append(P1);
 	curve.append(A1);
 	curve.append(A2);
@@ -43,5 +47,7 @@ QList<QPointF> teile(QList<QPointF> list, int index){
 void SpBezier::genB(){
 	curve = teile(curve, 0);
 	curve = teile(curve, 3); curve = teile(curve, 0);
+	curve = teile(curve, 9); curve = teile(curve, 6); curve = teile(curve, 3); curve = teile(curve, 0);
+	curve = teile(curve, 21); curve = teile(curve, 18); curve = teile(curve, 15); curve = teile(curve, 12); curve = teile(curve, 9); curve = teile(curve, 6); curve = teile(curve, 3); curve = teile(curve, 0);
 }
 

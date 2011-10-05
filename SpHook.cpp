@@ -6,7 +6,7 @@ SpHook::SpHook(QPointF pos, int typ){
 	position = pos;
 	this->setPos(pos-QPointF(2,2));
 	type = typ;
-	radius = 15;
+	radius = 5;
 }
 
 SpHook::~SpHook(){

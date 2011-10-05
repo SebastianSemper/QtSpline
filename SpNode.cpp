@@ -3,7 +3,7 @@
 using namespace std;
 
 SpNode::SpNode(QPointF pos, QPointF tan_1, QPointF tan_2){
-	radius = 10;
+	radius = 7;
 	position = pos;		
 	lef = new SpHook(tan_1,1);
 	rig = new SpHook(tan_2,2);	
