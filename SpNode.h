@@ -16,7 +16,6 @@ using namespace std;
 class SpNode:public QGraphicsItemGroup {
 	private:
 		QPointF position;
-		SpHook *mid;
 		SpHook *lef;
 		SpHook *rig;
 	public:

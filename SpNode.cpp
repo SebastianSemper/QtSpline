@@ -3,11 +3,9 @@
 using namespace std;
 
 SpNode::SpNode(QPointF pos, QPointF tan_1, QPointF tan_2){
-	position = pos;
-	mid = new SpHook(pos,0);	
+	position = pos;		
 	lef = new SpHook(tan_1,1);
-	rig = new SpHook(tan_2,2);
-	this->addToGroup(mid);
+	rig = new SpHook(tan_2,2);	
 	this->addToGroup(lef);
 	this->addToGroup(rig);	
 }
@@ -21,6 +19,8 @@ QRectF SpNode::boundingRect() const{
 }
 void SpNode::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget){
 	painter->setRenderHint(QPainter::Antialiasing);
+	painter->setBrush(Qt::red);
+        painter->drawEllipse(-5, -5, 10, 10);
         painter->setBrush(Qt::black);
         painter->drawLine(position, lef->GetPosition());
         painter->drawLine(position, rig->GetPosition());

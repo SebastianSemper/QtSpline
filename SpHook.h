@@ -15,7 +15,7 @@ using namespace std;
 class SpHook:public QGraphicsItem {
 	private:
 		QPointF position;
-		int type;	
+			
 	public:
 		SpHook(QPointF,int);
 		~SpHook();
