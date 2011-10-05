@@ -5,7 +5,7 @@
 #include "scene.h"
 #include "SpNode.h"
 
-using namespace std; 
+using namespace std;
  
 class gui : public QMainWindow, public Ui::MainWindow { 
 	Q_OBJECT

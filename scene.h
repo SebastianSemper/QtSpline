@@ -13,12 +13,14 @@
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
 #include "SpNode.h"
+#include "SpBezier.h"
 
 using namespace std;
 
 class scene:public QGraphicsScene{
 	private:
 		QList<SpNode*> points;
+		QList<SpBezier*> curves;
 		QPointF pos_klick;
 		QPointF pos_release;
 		int numpoints;		
@@ -28,6 +30,7 @@ class scene:public QGraphicsScene{
 		//~scene();
 		void mousePressEvent(QGraphicsSceneMouseEvent *event);
 		void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
+		void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 		
 
 };

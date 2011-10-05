@@ -33,7 +33,4 @@ class SpNode:public QGraphicsItemGroup {
 		void mouseHoverEvent(QGraphicsSceneMouseEvent * event);
 		void mouseLeaveEvent(QGraphicsSceneMouseEvent * event);
 };
-
-
-
 #endif 
