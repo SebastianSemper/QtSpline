@@ -7,7 +7,8 @@ SpNode::SpNode(QPointF pos, QPointF tan_1, QPointF tan_2){
 	lef = new SpHook(tan_1,1);
 	rig = new SpHook(tan_2,2);	
 	this->addToGroup(lef);
-	this->addToGroup(rig);	
+	this->addToGroup(rig);
+	this->setPos(position);
 }
 
 SpNode::~SpNode(){
@@ -19,11 +20,13 @@ QRectF SpNode::boundingRect() const{
 }
 void SpNode::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget){
 	painter->setRenderHint(QPainter::Antialiasing);
-	painter->setBrush(Qt::red);
-        painter->drawEllipse(-5, -5, 10, 10);
+	
         painter->setBrush(Qt::black);
-        painter->drawLine(position, lef->GetPosition());
-        painter->drawLine(position, rig->GetPosition());
+        painter->drawLine(QPointF(0,0), lef->GetPosition());
+        painter->drawLine(QPointF(0,0), rig->GetPosition());
+        
+        //painter->setBrush(Qt::red);
+        //painter->drawEllipse(-5, -5, 10, 10);
 }
 
 QPointF SpNode::GetPosition(){
