@@ -23,7 +23,7 @@ gui::gui(QMainWindow *parent) : QMainWindow(parent){
 	
 	
 	bezier b(bam,bum,bim,bom);
-	/*spline_point *q;
+	spline_point *q;
 	QList<QPointF> p;
 	q = new spline_point[13];
 	p = b.getp();
@@ -33,7 +33,7 @@ gui::gui(QMainWindow *parent) : QMainWindow(parent){
 	
 	for(int i = 1; i < 12; i++){
 		scene.addItem(&q[i]);
-	}*/
+	}
 	
 	view_canvas->setScene(&scene);
 	view_canvas->show();

@@ -20,7 +20,7 @@ class bezier{
 		bezier(spline_point*, spline_point*, spline_point*, spline_point*);
 		void curvepoints();
 		QList<QPointF> getp();
-		friend QList<QPointF> teile(QList<QPointF>*, int);
+		friend QList<QPointF>* teile(QList<QPointF>*, int);
 };
 
 #endif
